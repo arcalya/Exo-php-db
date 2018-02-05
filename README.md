@@ -1,1 +1,2 @@
-# Exo-php-db
+# PHP-Miniblog
+Exercice
