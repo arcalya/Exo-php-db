@@ -3,6 +3,11 @@
 // INSERT
 function insertArticle(){
 	
+   $db = Db::connect();
+   
+    $statement=$db->prepare('INSERT INTO articles( TitleArticle, ContentArticle, DateArticle, AuthorArticle) VALUES( ?, ?, NOW(), ?)');
+    $statement->bind_param( 'sss', $_POST['TitreArticle'], $_POST['ContenuArticle'], $_POST['AuteurArticle'] );
+    $statement->execute();
 
 }
 

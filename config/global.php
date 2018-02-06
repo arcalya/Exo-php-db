@@ -3,6 +3,7 @@
 /*
 *	Active le fichier de configuration
 */
+
 include( 'config.php' );
 
 /*
