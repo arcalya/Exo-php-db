@@ -1,1 +1,1 @@
-<h1>PHP-MySQL</h1>
+<h1><a href="index.php">PHP-MySQL</a></h1>

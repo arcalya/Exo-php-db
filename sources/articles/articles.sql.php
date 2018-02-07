@@ -14,6 +14,20 @@ function insertArticle(){
 
 // UPDATE
 function updateArticle( $IdArticle ){
+    	
+   $db = Db::connect();
+   
+    $statement=$db->prepare('UPDATE articles SET
+             TitleArticle=?,
+             ContentArticle=?, 
+           
+             AuthorArticle=?
+             WHERE IdArticle=?'
+            
+             );
+    
+    $statement->bind_param( 'sssi', $_POST['TitreArticle'], $_POST['ContenuArticle'], $_POST['AuteurArticle'], $_GET['id']  );
+    $statement->execute();
 	
 
 }
@@ -21,7 +35,8 @@ function updateArticle( $IdArticle ){
 
 // DELETE
 function deleteArticle( $IdArticle ){
-
+   $db = Db::connect();
+   $db->query('DELETE FROM articles WHERE IdArticle =\''.$IdArticle.'\'');
 
 }
 

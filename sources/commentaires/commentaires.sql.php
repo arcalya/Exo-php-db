@@ -1,7 +1,17 @@
 <?php
 
+
 // INSERT
 function insertCommentaire(){
+
+       
+      	
+   $db = Db::connect();
+   =$IdArticle;
+    $statement=$db->prepare('INSERT INTO comments( IdComment, PseudoComment, TextComment, DateComment, IdArticle) VALUES (?, ?, ?, NOW(), ?);
+    $statement->bind_param( 'dsssd', $_POST['TitreArticle'], $_POST['ContenuArticle'], $_POST['AuteurArticle'], $IdArticle );
+        
+    $statement->execute();
 
 	
 }
@@ -17,6 +27,8 @@ function updateCommentaire( $IdCommentaire ){
 // DELETE
 function deleteCommentaire( $IdCommentaire ){
 
+   $db = Db::connect();
+   $db->query('DELETE FROM comments WHERE $IdComment =\''.$IdComment.'\'');
 
 }
 
