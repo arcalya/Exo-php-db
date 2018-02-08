@@ -7,9 +7,13 @@ function insertCommentaire(){
        
       	
    $db = Db::connect();
-   =$IdArticle;
-    $statement=$db->prepare('INSERT INTO comments( IdComment, PseudoComment, TextComment, DateComment, IdArticle) VALUES (?, ?, ?, NOW(), ?);
-    $statement->bind_param( 'dsssd', $_POST['TitreArticle'], $_POST['ContenuArticle'], $_POST['AuteurArticle'], $IdArticle );
+   $IdComment=1;
+   $PseudoComment=$_POST['PseudoCommentaire'];
+   $TextComment=$_POST['TexteCommentaire'];
+   
+           
+    $statement=$db->prepare('INSERT INTO comments( IdComment, PseudoComment, TextComment, DateComment, IdArticle) VALUES (?, ?, ?, NOW(),?)');
+    $statement->bind_param( 'issi', $IdComment, $PseudoComment,$TextComment, 1 );
         
     $statement->execute();
 
