@@ -13,7 +13,7 @@ function insertCommentaire(){
    
            
     $statement=$db->prepare('INSERT INTO comments( IdComment, PseudoComment, TextComment, DateComment, IdArticle) VALUES (?, ?, ?, NOW(),?)');
-    $statement->bind_param( 'issi', $IdComment, $PseudoComment,$TextComment, 1 );
+    $statement->bind_param( 'iss', $IdComment, $PseudoComment,$TextComment, 1 );
         
     $statement->execute();
 

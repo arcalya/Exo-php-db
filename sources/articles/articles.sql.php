@@ -20,7 +20,6 @@ function updateArticle( $IdArticle ){
     $statement=$db->prepare('UPDATE articles SET
              TitleArticle=?,
              ContentArticle=?, 
-           
              AuthorArticle=?
              WHERE IdArticle=?'
             
